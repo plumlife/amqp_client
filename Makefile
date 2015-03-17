@@ -12,8 +12,7 @@ ERLC_OPTS = +debug_info \
             +warn_deprecated_function \
             +warn_obsolete_guard \
             +warn_unused_import \
-            +nowarn_export_vars \
-            +warnings_as_errors
+            +nowarn_export_vars
 
 
 COMPILE_FIRST = amqp_gen_consumer \
