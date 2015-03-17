@@ -21,6 +21,9 @@ ERLANG_MK_VERSION = 1
 PROJECT ?= $(notdir $(CURDIR))
 PROJECT := $(strip $(PROJECT))
 
+ERLC_OPTS ?= -Werror +debug_info +warn_export_all +warn_export_vars \
+	+warn_shadow_vars +warn_obsolete_guard # +bin_opt_info +warn_missing_spec
+
 # Verbosity.
 
 V ?= 0
@@ -192,8 +195,7 @@ help::
 
 # Configuration.
 
-ERLC_OPTS ?= -Werror +debug_info +warn_export_all +warn_export_vars \
-	+warn_shadow_vars +warn_obsolete_guard # +bin_opt_info +warn_missing_spec
+
 COMPILE_FIRST ?=
 COMPILE_FIRST_PATHS = $(addprefix src/,$(addsuffix .erl,$(COMPILE_FIRST)))
 
